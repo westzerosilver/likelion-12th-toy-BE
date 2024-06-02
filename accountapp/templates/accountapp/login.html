@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+    <div style="border-radius: 1rem; margin: 2rem; text-align: center">
+        <h1 style="font-family: 'lobster', cursive;">
+            Hello World LIST!
+        </h1>
+
+        <form action="/account/login/" method="post">
+            {% csrf_token %}
+            <div>
+                <input type="text" name="input">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="POST">
+            </div>
+        </form>
+
+        {% if login_list %}
+            {%  for login in login_list %}
+            <h4>
+                {{  login.text  }}
+            </h4>
+            {%  endfor %}
+        {% endif %}
+    </div>
+
+{% endblock %}
