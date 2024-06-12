@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>메인홈</title>
+  <link rel="stylesheet" href="{% static 'css/crewmenu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+</head>
+<body>
+  <div class="App">
+    <div class="frame">
+      <header>
+        <nav>
+          <div class="logo">
+          <a href="#">
+            <img src="{% static 'pic/FitCrew_logo.png' %}" alt="Logo" />
+          </a>
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="#" class="active">크루 모집</a></li>
+              <li><a href="{% url 'feedApp2:feed' %}">피드</a></li>
+              <li><a href="#">내 모임</a></li>
+            </ul>
+          </div>
+          <img class="user-icon" src="pic/usericon.svg" alt="User Icon" />
+        </nav>
+      </header>
+      <section class="filter-buttons">
+        <button class="select-sport" id="sport-button" onclick="openSportModal()">운동 종목 : 전체</button>
+        <button class="select-region" id="region-button" onclick="openRegionModal()">지역 : 전체</button>
+      </section>
+      <button class="create-crew">크루 개설</button>
+      <main>
+        <section class="crew-cards" id="crew-cards">
+          <!-- 크루 카드가 여기 추가될 예정 -->
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- 지역 모달 -->
+  <div id="regionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeRegionModal()">&times;</span>
+      <h1 style="margin-left: 10px;">지역</h1>
+      <div class="regions">
+        <button data-region="전체">전체</button>
+        <button data-region="서울">서울</button>
+        <button data-region="경기">경기</button>
+        <button data-region="광주">광주</button>
+        <button data-region="대구">대구</button>
+        <button data-region="대전">대전</button>
+        <button data-region="부산">부산</button>
+        <button data-region="세종">세종</button>
+        <button data-region="울산">울산</button>
+        <button data-region="인천">인천</button>
+        <button data-region="강원">강원</button>
+        <button data-region="경남">경남</button>
+        <button data-region="경북">경북</button>
+        <button data-region="전남">전남</button>
+        <button data-region="전북">전북</button>
+        <button data-region="충남">충남</button>
+        <button data-region="충북">충북</button>
+        <button data-region="제주">제주</button>
+        <button data-region="해외">해외</button>
+        <button data-region="기타">기타</button>
+      </div>
+      <div class="modal-buttons">
+        <button onclick="closeRegionModal()">닫기</button>
+        <button onclick="resetRegion()">초기화</button>
+        <button onclick="applyFilters()">적용하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 운동 종목 모달 -->
+  <div id="sportModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSportModal()">&times;</span>
+      <h1 style="margin-left: 10px;">종목</h1>
+      <div class="sports">
+        <button data-category="전체">전체</button>
+        <button data-category="축구">축구</button>
+        <button data-category="농구">농구</button>
+        <button data-category="배구">배구</button>
+        <button data-category="야구">야구</button>
+        <button data-category="럭비">럭비</button>
+        <button data-category="당구">당구</button>
+        <button data-category="승마">승마</button>
+        <button data-category="탁구">탁구</button>
+        <button data-category="수영">수영</button>
+        <button data-category="유도">유도</button>
+        <button data-category="요가">요가</button>
+        <button data-category="러닝">러닝</button>
+        <button data-category="빙상">빙상</button>
+        <button data-category="등산">등산</button>
+        <button data-category="태권도" style="width: 70px;">태권도</button>
+        <button data-category="테니스" style="width :70px;">테니스</button>
+        <button data-category="헬스">헬스</button>
+        <button data-category="골프">골프</button>
+        <button data-category="기타">기타</button>
+
+
+      </div>
+      <div class="modal-buttons">
+        <button onclick="closeSportModal()">닫기</button>
+        <button onclick="resetSport()">초기화</button>
+        <button onclick="applyFilters()">적용하기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>

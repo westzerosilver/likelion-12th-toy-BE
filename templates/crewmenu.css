@@ -1,0 +1,215 @@
+
+
+/* 필터 버튼 섹션 스타일링 */
+.filter-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 150px;
+    gap: 30px;
+  }
+
+  .filter-buttons button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 21px;
+    border-radius: 30px;
+    background-color: #F48201;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .filter-buttons button:hover {
+    background-color: #e65c00;
+  }
+
+  .create-crew {
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    width: 140px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #F48201;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+    margin-bottom : 20px;
+
+  }
+
+  .create-crew:hover {
+    background-color: #e65c00;
+  }
+
+  /* 크루 카드 섹션 스타일링 */
+  .crew-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1072px;
+    gap: 50px;
+  }
+
+  .crew-card {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.2s;
+  }
+
+  .crew-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .crew-card img {
+    width: 116px;
+    height: 123px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+    margin-right: 12px;
+  }
+
+  .card-content {
+    width: 374px;
+    height: 123px;
+    border-radius: 20px;
+    border: 1px solid #E6E6E6;
+    background: #FFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    padding: 18px 0 3px 35px;
+    box-sizing: border-box;
+  }
+
+  .category-d-day {
+    display: flex;
+    margin-bottom: 3px;
+  }
+
+  .card-content .category {
+    font-size: 15px;
+    color: #555;
+    margin-right: 1em;
+  }
+
+  .card-content .d-day {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .dday-orange {
+    color: #ff6600;
+  }
+
+  .dday-black {
+    color: #717171;
+  }
+
+  .border-mint {
+    border: 3px solid rgba(62, 189, 207, 0.50);
+
+  }
+
+  .card-content h3 {
+    margin: 0 0 0.5em;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .card-content a {
+    color: #555;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  /* Modal 스타일링 */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 18px;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .regions, .sports {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    margin: 50px 0;
+  }
+
+  .regions button, .sports button {
+    height: 48px;
+    width: 48px;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 7px;
+  }
+
+  .regions button:hover, .regions button.selected,
+  .sports button:hover, .sports button.selected {
+    color: #1E1E1E;
+    background-color: rgba(62, 189, 207, 0.50);
+    border-radius: 100%;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 180px;
+  }
+
+  .modal-buttons button {
+    background-color: #F48201;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 15px;
+    padding: 3px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .modal-buttons button:hover {
+    background-color: #e65c00;
+  }

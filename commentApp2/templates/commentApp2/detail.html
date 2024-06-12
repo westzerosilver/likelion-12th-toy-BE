@@ -1,0 +1,38 @@
+<!--<div style="border: 1px solid; text-align:left; padding: 4%; margin: 1rem 0; border-radius: 1rem; border-color: #bbb;">-->
+<!--    <div>-->
+<!--        <strong>-->
+<!--            {{ comment2.writer.profile.nickname }}-->
+<!--        </strong>-->
+<!--&lt;!&ndash;        띄어쓰기&ndash;&gt;-->
+<!--        &nbsp&nbsp&nbsp-->
+<!--    </div>-->
+<!--    <div style="margin: 1rem 0;">-->
+<!--        {{ comment2.content }}-->
+
+<!--    </div>-->
+<!--    {% if comment2.writer == user %}-->
+<!--    <div style="text-align: right;">-->
+<!--        <a href="{% url 'commentApp2:delete' pk=comment2.pk %}" class="btn btn-danger rounded-pill">-->
+<!--            Delete-->
+<!--        </a>-->
+<!--    </div>-->
+<!--    {% endif %}-->
+<!--</div>-->
+
+<div style="text-align:left; padding: 4%; margin: 1rem 0; ">
+    <div>
+        <strong>
+            {{ comment2.writer }}
+        </strong>
+        &nbsp&nbsp&nbsp
+        <span >{{ comment2.content }}</span>
+<!--        띄어쓰기-->
+    </div>
+    {% if comment2.writer == user %}
+    <div style=" text-align: right;">
+        <a href="{% url 'commentApp2:delete' pk=comment2.pk %}" class="btn btn-danger rounded-pill">
+            Delete
+        </a>
+    </div>
+    {% endif %}
+</div>

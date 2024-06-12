@@ -1,0 +1,11 @@
+
+{% for feed in feeds %}
+<div class="card" data-category="야구">
+    <img src="{{ feed.image.url }}" alt="야구">
+    <div class="card-text">
+        <p>{{ feed.content }}</p>
+    </div>
+    <a>피드 보러 가기</a>
+</div>
+
+{% endfor %}

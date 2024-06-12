@@ -1,0 +1,129 @@
+/* 전반적인 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #F17D2A 40%, #F17D2A 40%, #F1F1F1 40%, #F1F1F1 60%);
+}
+
+/*맨 위에 로그인 글씨 */
+.header h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: -5px;
+}
+
+/* 로그인 폼 */
+.login-form {
+    background-color: white;
+    padding: 220px 30px 30px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* 로그인 폼 안의 내용 */
+.login-form p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    margin-top: -170px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* 로그인 폼 안의 form */
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 25px 90px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkbox label {
+    font-size: 9px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.checkbox input {
+    margin-right: 5px;
+}
+
+/* 로그인 버튼 스타일 */
+.login-form button {
+    background-color: #F17D2A;
+    color: white;
+    border: none;
+    padding: 12px 90px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #e46f1c;
+}
+
+/* 회원가입 링크 스타일 */
+.register-link {
+    display: block;
+    margin-top: 25px;
+    font-size: 14px;
+    color: grey;
+    text-decoration: none;
+}
+
+
+.policies p {
+    padding: 20px;
+    display: inline;
+    font-size: 9px;
+    color: grey;
+}
+
+.company-info p { /* 전체 p 태그 앞 margin */
+    margin-left: 20px;
+    font-size: 9px;
+}
+
+.company-info p span { /* 대표, 사업자등록번호, 기업명 등의 색 변경 */
+    color: rgb(170, 170, 170);
+}
+
+.company-info .info-line {
+    margin-left: 15px;
+    margin-bottom: -5px;
+
+}
+
+.company-info .info-gap {
+    display: inline;
+    margin-right: 20px;
+}
+
+.company-info .info-gap2 {
+    display: inline;
+    margin-right: -3px;
+}

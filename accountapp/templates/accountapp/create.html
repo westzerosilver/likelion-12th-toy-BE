@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>회원가입</h1>
+        </div>
+        <div class="register-form">
+            <p class="form-title">회원가입을 위해<br>정보를 입력해주세요.</p>
+            <form id="registrationForm" action="{% url 'accountapp:create' %}" method="post" onsubmit="return validateForm()">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p class="form-check">*전화번호</p>
+                <input type="text" id="phone" name="phone" placeholder="000-0000-0000">
+                <p class="phoneError" id="phoneError" style="display: none;">전화번호를 형식에 맞게 기입해 주세요.</p>
+
+                <p class="form-check">*아이디</p>
+                <input type="text" id="username" name="username">
+
+                <p class="form-check">*비밀번호</p>
+                <input type="password" id="password" name="password">
+
+                <p class="form-check">*비밀번호 확인</p>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <p class="passwordError" id="passwordError" style="display: none;">비밀번호와 비밀번호 확인이 일치하지 않습니다.</p>
+
+                <p class="form-check">*성별</p>
+                <div class="radio">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">여자</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">남자</label>
+                </div>
+                <button type="submit">회원가입</button>
+            </form>
+
+        </div>
+        <footer>
+            <div class="policies">
+                <p>이용약관</p>
+                <p>파트너 이용약관</p>
+                <p>개인정보처리방침</p>
+                <p>제안서 요청</p>
+            </div>
+            <div class="company-info">
+                <p>COMPANY INFO</p>
+                <p class="info-line">
+                    <p class="info-gap"><span>대표:  </span> 김지원</p>
+                    <p class="info-gap"><span>사업자등록번호:  </span>  482-90-12345</p>
+                </p>
+                <p class="info-line">
+                    <p class="info-gap2"><span>기업명:  </span> (주)핏크루</p>
+                    <p class="info-gap2"><span>통신판매업신고:  </span> 제1230-23호</p>
+                </p>
+                <p class="info-line">
+                    <p class="info-gap"><span>주소: </span> 남양주시 오남읍 양지로 217번길 42-11(핏크루센터)</p>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/create.js' %}"></script>
+</body>
+</html>

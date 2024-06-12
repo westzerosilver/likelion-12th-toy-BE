@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+{% load bootstrap4 %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+
+    <title>로그인</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>로그인</h1>
+        </div>
+        <div class="login-form" style="text-align: center; max-width:500px; margin:4rem auto">
+            <p>반갑습니다,<br>Fit Crew입니다.</p>
+            <form action="" method="POST">  <!-- method="POST" 추가 -->
+                {% csrf_token %}  <!-- 보안을 위한 CSRF 토큰 추가 -->
+                {% bootstrap_form form %}
+                <button type="submit" class="btn btn-primary">로그인</button>  <!-- form 태그 안으로 이동 -->
+            </form>
+            <a href="{% url 'accountapp:create' %}" class="register-link">회원가입</a>
+        </div>
+        <footer>
+            <div class="policies">
+                <p>이용약관</p>
+                <p>파트너 이용약관</p>
+                <p>개인정보처리방침</p>
+                <p>제안서 요청</p>
+            </div>
+            <br>
+            <div class="company-info">
+                <p>COMPANY INFO</p>
+                <p class="info-line">
+                    <p class="info-gap"><span>대표:  </span>  김지원</p>
+                    <p class="info-gap"><span>사업자등록번호:  </span>  482-90-12345</p>
+                </p>
+                <p class="info-line">
+                    <p class="info-gap2"><span>기업명:  </span>  (주)핏크루</p>
+                    <p class="info-gap2"><span>통신판매업신고:  </span>  제1230-23호</p>
+                </p>
+                <p class="info-line">
+                    <p class="info-gap"><span>주소: </span>  남양주시 오남읍 양지로 217번길 42-11(핏크루센터)</p>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

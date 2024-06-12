@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피드</title>
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">
+                     <img src="{% static 'pic/FitCrew_logo.png' %}" alt="피드 로고">
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="recruitment.html" class="recruit">크루 모집</a></li>
+                    <li><a href="#" class="feed active">피드</a></li>
+                    <li><a href="#" class="my-meetings">내 모임</a></li>
+                </ul>
+            </div>
+<!--            <img class="user-icon" src="pic/usericon.svg" alt="Profile Icon">-->
+            <img class="user-icon" src="{% static 'pic/usericon.svg' %}" alt="Profile Icon">
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="검색">
+            </div>
+
+
+<!--      추천피드      -->
+            <div class="recommendations">
+                <p class="recommendations-heading">추천 피드</p>
+                    {% include 'feedApp2/recommand.html' with feeds=random_feeds %}
+
+            </div>
+        </aside>
+
+
+<!--        피드 구현-->
+        <section class="feed" id="feed">
+<!--            게시물 생성-->
+            <div class="write-button">
+                <a href="{% url 'feedApp2:create' %}">
+                    <button class="orange-button">글쓰기</button>
+                </a>
+            </div>
+
+            {% if feed_list %}
+                {% for feed in feed_list%}
+                    {% include 'feedApp2/detail.html' with feed=feed %}
+                {% endfor %}
+            {% else %}
+                <div class="text-center">
+                      <h1>no Article YET!</h1>
+                </div>
+            {% endif %}
+
+
+        </section>
+    </main>
+    <script src="{% static 'js/feed.js' %}"></script>
+</body>
+</html>

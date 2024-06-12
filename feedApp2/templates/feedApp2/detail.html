@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/feed.css' %}">
+
+<style>
+
+
+</style>
+
+<div class="post existing-post">
+    <div class="feed-profile">
+        <img src="{{ feed.writer.profile.image.url }}" alt="profile-image">
+        <p> {{ feed.writer }} </p>
+    </div>
+    <img src="{{ feed.image.url }}" alt="운동">
+    <div class="inline-links">
+        <a class="fas fa-heart like-button" href="{% url 'likeApp2:feed_like' pk=feed.pk %}" style="display: inline;"></a>
+        <a class="fas fa-comment"></a>
+        <a class="fas fa-share"></a>
+    </div>
+
+    <div class="post-info">
+        <div class="post-meta">
+
+            <span class="post-like">좋아요 {{ feed.like }}개</span>
+            <div class="post-write">
+                <p class="post-name"> {{ feed.writer.profile.nickname }} </p>
+                <p>{{ feed.content }}</p>
+            </div>
+            <span class="post-mention">댓글 {{ feed.comment2.count }}개 보기</span>
+
+            <div class="post-meta" style="text-align: center;">
+                {% for comment2 in feed.comment2.all %}
+                    {% include 'commentApp2/detail.html' with comment2=comment2 %}
+                {% endfor %}
+            </div>
+
+
+            {% include 'commentApp2/create.html' with feed=feed %}
+
+            <br>
+
+            <span class="post-hours" id="post-time">{{ feed.created_at }}</span>
+        </div>
+    </div>
+</div>
